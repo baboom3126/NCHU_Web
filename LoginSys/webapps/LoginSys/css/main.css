@@ -1,0 +1,13 @@
+body{
+  display: inline-block;
+  width:100%;
+  text-align: center;
+  background-image:url("../img/main.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  font-family: Microsoft JhengHei,Arial;
+
+}
+.text1{
+  text-align: center;
+}
