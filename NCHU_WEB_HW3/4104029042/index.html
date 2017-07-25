@@ -1,0 +1,240 @@
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<title>互動式履歷表</title>
+
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+
+
+
+	<script>
+		function send() {
+
+			var f = document.form1;
+			var name1 = f.username.value;
+			var date = f.birthday.value;
+			var gender = f.sex.value;
+			var ho = f.hobby;
+			var hoNum = 0;
+			var ho1 = "",
+				ho2 = "",
+				ho3 = "";
+			var text = f.intro.value;
+			for (var i = 0; i < ho.length; i++) {
+				if (ho[i].checked) {
+					hoNum++;
+				}
+			}
+			if (ho[0].checked)
+				ho1 = ho[0].value;
+
+			if (ho[1].checked)
+				ho2 = ho[1].value;
+
+			if (ho[2].checked)
+				ho3 = ho[2].value;
+
+			alert("您輸入的資料為\n名字: " + name1 + "\n生日: " + date + "\n性別: " + gender + "\n選了" + hoNum + "個興趣\n分別是: " + ho1 + " " + ho2 + " " + ho3 + "\n自傳:\n" + text);
+
+
+			var objNewNode;
+
+
+				var objNode = document.getElementById("div1");
+
+
+				objNewNode = document.createElement("table");
+				objNewNode.border = "1";
+				objNewNode.width = "300";
+				objNewNode.id = "table1";
+
+
+
+				objNode.appendChild(objNewNode);
+
+
+
+			var objNewNode = document.getElementById("table1");
+
+
+			var tr1 = document.createElement("tr");
+			var tr2 = document.createElement("tr");
+			var tr3 = document.createElement("tr");
+			var tr4 = document.createElement("tr");
+			var tr5 = document.createElement("tr");
+			objNewNode.appendChild(tr1);
+			objNewNode.appendChild(tr2);
+			objNewNode.appendChild(tr3);
+			objNewNode.appendChild(tr4);
+			objNewNode.appendChild(tr5);
+
+			var td11 = document.createElement("td");
+			var td12 = document.createElement("td");
+			var td21 = document.createElement("td");
+			var td22 = document.createElement("td");
+			var td31 = document.createElement("td");
+			var td32 = document.createElement("td");
+			var td41 = document.createElement("td");
+			var td42 = document.createElement("td");
+			var td51 = document.createElement("td");
+			var td52 = document.createElement("td");
+
+			tr1.appendChild(td11);
+			tr1.appendChild(td12);
+
+			tr2.appendChild(td21);
+			tr2.appendChild(td22);
+
+			tr3.appendChild(td31);
+			tr3.appendChild(td32);
+
+			tr4.appendChild(td41);
+			tr4.appendChild(td42);
+
+			tr5.appendChild(td51);
+			tr5.appendChild(td52);
+
+			td11.innerHTML = "名字";
+			td12.innerHTML = name1;
+			td21.innerHTML = "生日";
+			td22.innerHTML = date;
+			td31.innerHTML = "性別:";
+			td32.innerHTML = gender;
+			td41.innerHTML = "興趣:";
+			td42.innerHTML = ho1 + " " + ho2 + " " + ho3;
+			td51.innerHTML = "自傳:";
+			td52.innerHTML = text;
+
+
+			/*
+			document.getElementById("div1").innerHTML="<table id=\"table1\" border=\"1\"><tr id=\"tr1\"><td  id=\"td11\" ><//td><td id=\"td12\"><//td><//tr><tr><td  id=\"td21\"><//td><td id=\"td22\"><//td><//tr><tr><td  id=\"td31\"><//td><td id=\"td32\"><//td><//tr><tr><td id=\"td41\"><//td><td id=\"td42\"><//td><//tr><tr><td id=\"td51\"><//td><td id=\"td52\"><//td><//tr><//table>";
+
+			document.getElementById("td11").innerHTML="名字:";
+			document.getElementById("td21").innerHTML="生日:";
+			document.getElementById("td31").innerHTML="性別:";
+			document.getElementById("td41").innerHTML="興趣:";
+			document.getElementById("td42").innerHTML=ho1+" "+ho2+" "+ho3;
+			document.getElementById("td12").innerHTML=name1;
+			document.getElementById("td22").innerHTML=date;
+			document.getElementById("td32").innerHTML=gender;
+			document.getElementById("td51").innerHTML="自傳:";
+			document.getElementById("td52").innerHTML=text;
+
+			*/
+		}
+
+
+		function setWhite() {
+			var objEle = document.getElementById("table1");
+			objEle.style.color = "purple";
+		}
+
+		function setGreen() {
+			var b = document.getElementById("table1");
+			b.style.color = "green";
+		}
+
+		function setLarge() {
+			var h = document.getElementById("table1");
+			h.style.fontSize = "30px";
+		}
+
+		function setSmall() {
+			var b = document.getElementById("table1");
+			b.style.fontSize = "12px";
+		}
+
+		function hideElement() {
+			var h = document.getElementById("table1");
+			if (h.style.display == "none") h.style.display = "";
+			else h.style.display = "none";
+		}1
+	</script>
+</head>
+
+
+<body>
+
+
+
+		<form action="javascript:send()" name="form1">
+
+			<p class="littlered" onmouseover="this.style.color='blue';" onmouseout="this.style.color='red';" onclick="this.className='bigred';">
+				姓名
+				<input type="text" name="username"></p>
+
+
+
+			<p class="littlered" onmouseout="this.style.color='blue';" onmouseover="this.style.color='red';" onclick="this.className='bigred';">
+				生日
+				<input type="date" name="birthday"></p>
+
+
+
+
+
+			<p class="littlered" onmouseover="this.style.color='blue';" onmouseout="this.style.color='red';" onclick="this.className='bigred';">
+				性別
+				<input type="radio" name="sex" value="男">男
+				<input type="radio" name="sex" value="女">女
+			</p>
+
+
+
+
+			<p class="littlered" onmouseout="this.style.color='blue';" onmouseover="this.style.color='red';" onclick="this.className='bigred';">
+				興趣
+
+				<input type="checkbox" name="hobby" value="吃飯">吃飯
+				<input type="checkbox" name="hobby" value="睡覺">睡覺
+				<input type="checkbox" name="hobby" value="打東東">打東東
+			</p>
+
+
+
+			<p class="littlered" onmouseover="this.style.color='blue';" onmouseout="this.style.color='red';" onclick="this.className='bigred';">
+				自傳
+				<textarea name="intro" cols="50" rows="6" placeholder="請輸入內容"></textarea>
+			</p>
+			<input type="submit" value="確認">
+			<input type="reset" value="重設">
+
+		</form>
+
+		<!--
+<div id="bodycolor">動態樣式的字型與色彩</div>
+<p class="littlered" onmouseover="this.style.color='blue';" onmouseout="this.style.color='red';" onclick="this.className='bigred';" >
+動態樣式的字型與色彩
+</p>
+
+-->
+
+
+
+		<form>
+			<input type="button" onclick="setWhite()" value="紫色">
+			<input type="button" onclick="setGreen()" value="綠色">
+			<input type="button" onclick="setLarge()" value="放大">
+			<input type="button" onclick="setSmall()" value="縮小">
+			<input type="button" onclick="hideElement()" value="隱藏">
+		</form>
+
+
+
+		<div id="div1"></div>
+
+
+
+
+
+
+
+</body>
+
+</html>

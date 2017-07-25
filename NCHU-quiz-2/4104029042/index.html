@@ -1,0 +1,77 @@
+<html>
+
+<head>
+<meta charset="utf-8">
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+<title>小考</title>
+<script>
+function changetitle(){
+
+document.getElementById("title").innerHTML="Web Programming-4104029042";
+
+}
+
+function change(){
+
+document.getElementById("li1").innerHTML="HTML5";
+document.getElementById("li2").innerHTML="CSS3";
+
+var objnode=document.getElementById("container");
+var newnode=document.createElement("li");
+newnode.innerHTML="MySQL";
+objnode.appendChild(newnode);
+
+}
+function jQuerychange(){
+$(document).ready(function(){
+  $("li").mouseenter(function(){
+    $("li").css("color","red");
+	$("li").css("font-size","larger");
+
+  });
+  $("li").mouseleave(function(){
+    $("li").css("color","black");
+	$("li").css("font-size","medium");
+
+  });
+});
+}
+</script>
+
+</head>
+
+<body>
+
+<div id="head">
+<h1 id="title">Web Programming</h1>
+</div>
+
+<hr>
+
+<div id="container">
+
+<p>Content</p>
+<li id="li1">HTML</li>
+<li id="li2">CSS</li>
+<li>DOM</li>
+<li>Javascript</li>
+<li>JSP</li>
+
+</div>
+
+
+<br>
+
+
+<input type="button" value="以JS更改元素內容" onclick="change()">
+<input type="button" value="以jQuery更改CSS" onclick="jQuerychange()">
+<input type="button" value="改標題" onclick="changetitle()">
+
+
+
+</body>
+
+
+
+</html>

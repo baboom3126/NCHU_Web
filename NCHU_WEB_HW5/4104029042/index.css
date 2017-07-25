@@ -1,0 +1,93 @@
+body {
+    font-family: Microsoft JhengHei, Arial;
+    background-color: rgba(82, 82, 82, 0.5);
+}
+
+input {
+    border-radius: 5px;
+      max-width:100%;
+}
+select{
+  max-width:100%;
+
+}
+
+p {
+    display: inline-block;
+    font-size: 12px;
+}
+
+textarea {
+    border-radius: 10px;
+    resize: none;
+    max-height:100%;
+    width:100%;
+}
+
+div {
+    padding: 20px;
+
+}
+
+.div1 {
+    margin: 0px auto;
+    display: block;
+    text-align: center;
+    width: 30%;
+    padding: 20px;
+    background-color: rgba(168, 230, 207, 0.8);
+}
+
+.div2 {
+    margin: 0px auto;
+    display: block;
+    text-align: center;
+    width: 30%;
+    padding: 20px;
+    background-color: rgba(220, 237, 193, 0.8);
+}
+
+.div3 {
+    margin: 0px auto;
+    display: block;
+    text-align: center;
+    width: 30%;
+    padding: 20px;
+    background-color: rgba(255, 211, 182, 0.8);
+}
+
+.div4 {
+    margin: 0px auto;
+    display: block;
+    text-align: center;
+    width: 30%;
+    padding: 20px;
+    background-color: rgba(255, 170, 165, 0.8);
+}
+
+.div5 {
+    margin: 0px auto;
+    display: block;
+    text-align: center;
+    width: 30%;
+    padding: 20px;
+    background-color: rgba(243, 247, 152, 0.8);
+}
+
+.div6 {
+    margin: 0px auto;
+    display: block;
+    text-align: center;
+    width: 30%;
+    padding: 20px;
+    background-color: rgba(171, 203, 137, 0.8);
+}
+
+.div7 {
+    margin: 0px auto;
+    display: block;
+    text-align: center;
+    width: 30%;
+    padding: 20px;
+    background-color: rgba(171, 203, 137, 0.8);
+}

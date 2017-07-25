@@ -1,0 +1,356 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>HW4</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+
+    <style>
+        body {
+            font-weight: bold;
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            font-family: Microsoft JhengHei;
+            margin: 0;
+            width: 100%;
+            min-height: 100%;
+            font-size: medium;
+            background-image: url('background.jpg');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        #header {
+          border-radius:20px;
+
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.15);
+            margin: 20px;
+            display: block;
+            height: 15%;
+            font-size: 90;
+            color: black;
+        }
+
+        #book {
+          border-radius:15px;
+
+            display: inline-block;
+            padding: 40px;
+            width: 60%;
+            height: 300px;
+            background-color: rgba(0, 0, 0, 0.2);
+            margin: 10px;
+        }
+
+        p {
+            font-size: 30px;
+            color: white;
+        }
+
+        a {
+            border-radius:20px;
+            text-decoration: none;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: inline-block;
+            padding: 20px;
+            font-size: 20;
+            color: white;
+        }
+
+        form {
+            font-size: 25px;
+        }
+
+        .receipt {
+            font-size: 35px;
+            color white;
+        }
+
+        .number1 {
+            width: 40px;
+            font-size: 25px;
+        }
+
+        #introduction {
+            background-color: rgba(0, 0, 0, 0.6);
+            border: 1px solid white;
+            padding: 15px;
+            font-size: 20;
+            color: white;
+        }
+
+        #inner_a {
+            background-color: rgba(0, 0, 0, 0.6);
+
+            display: inline-block;
+            border: 1px solid white;
+            padding: 10px;
+            margin: 20px;
+            font-size: 20;
+            color: white;
+        }
+
+        #order {
+
+            border: 1px solid white;
+            padding: 3px;
+            font-size: 25px;
+            background-color: rgba(255, 243, 112, 0.8);
+        }
+
+        input {
+            font-size: 20px;
+        }
+
+        #para {
+            color white;
+            font-size: 40px;
+        }
+    </style>
+    <script>
+        <!-- fade to-->
+        $(document).ready(function() {
+            $("a").mouseenter(function() {
+                $(this).fadeTo(200, 0.6);
+            });
+            $("a").mouseleave(function() {
+                $(this).fadeTo(200, 1);
+            });
+
+            <!-- hide-->
+            $('div.book1').hide();
+            $('div.book2').hide();
+            $('div.book3').hide();
+            $('div.book4').hide();
+            $('div.order').hide();
+            $('p.intro1').hide();
+            $('p.intro2').hide();
+            $('p.intro3').hide();
+            $('p.intro4').hide();
+            $('div.orderinfo').hide();
+            $('div.receipt').hide();
+
+
+
+
+            $('a.show').click(function() {
+                $('div.book1').toggle('500');
+
+            });
+            $('a.inner_show').click(function() {
+                $('div.book1').hide('500');
+            })
+
+
+            $('a.toggle').click(function() {
+                $('div.book2').toggle('500');
+            })
+
+            $('a.inner_toggle').click(function() {
+                $('div.book2').hide('500');
+            })
+
+            $('a.fade').click(function() {
+                $('div.book3').fadeToggle('1000');
+            })
+
+            $('a.inner_fade').click(function() {
+                $('div.book3').fadeOut('1000');
+            })
+
+
+            $('a.fadeToggle').click(function() {
+                $('div.book4').fadeToggle('1500');
+            })
+
+            $('a.inner_fadeToggle').click(function() {
+                $('div.book4').fadeOut('1500');
+            })
+
+            $('a.fadeIn').click(function() {
+                if (!$('div.book1').is(':hidden'))
+                    $('div.book1').fadeOut("slow");
+                if (!$('div.book2').is(':hidden'))
+                    $('div.book2').fadeOut("slow");
+                if (!$('div.book3').is(':hidden'))
+                    $('div.book3').fadeOut("slow");
+                if (!$('div.book4').is(':hidden'))
+                    $('div.book4').fadeOut("slow");
+
+
+                $('div.order').fadeIn("slow");
+            })
+
+
+            $('a.intro1').click(function() {
+                $('p.intro1').show("slow");
+            })
+
+            $('a.intro2').click(function() {
+                $('p.intro2').show("slow");
+            })
+            $('a.intro3').click(function() {
+                $('p.intro3').show("slow");
+            })
+            $('a.intro4').click(function() {
+                $('p.intro4').show("slow");
+            })
+            $('a.order').click(function() {
+                $('div.orderinfo').slideToggle("slow");
+            })
+            $('a.send').click(function() {
+                $('div.order').slideUp("slow")
+                $('div.receipt').slideDown("slow")
+
+            })
+            $('a.reset').click(function() {
+                $(":text").val("");
+                $(":tel").val("");
+                $(":email").val("");
+            })
+        });
+    </script>
+
+
+
+    <script>
+        function send() {
+
+            var f = document.form1;
+            var name = f.name.value;
+            var tele = f.tele.value;
+            var mail = f.mail.value;
+            document.getElementById('para').innerHTML = name + "<br>" + tele + "<br>" + mail;
+        }
+    </script>
+
+
+</head>
+
+
+<body>
+    <div id="header">
+        book.com
+    </div>
+    <div id="option">
+
+        <a href="#" class="show">book1</a>
+
+        <a href="#" class="toggle">book2</a>
+
+        <a href="#" class="fade">book3</a>
+
+        <a href="#" class="fadeToggle">book4</a>
+
+        <a href="#" class="fadeIn">order</a>
+
+        <a href="./about.html" class="fadeIn">About</a>
+
+    </div><br>
+
+
+    <div id="book" class="book1">
+
+        <a href="#" id="introduction" class="intro1">Introduction</a>
+        <br>
+        <p class="intro1">
+            author:AA<br> publisher:A1
+            <br> price:200
+            <br>
+            <br>
+
+        </p>
+
+
+        <a href="#" id="inner_a" class="inner_show">EXIT</a>
+
+    </div>
+
+
+    <div id="book" class="book2">
+        <a href="#" id="introduction" class="intro2">Introduction</a>
+
+        <br>
+        <p class="intro2">
+            author:BB<br> publisher:B1
+            <br> price:150
+            <br>
+            <br>
+
+        </p>
+        <a href="#" id="inner_a" class="inner_toggle">EXIT</a>
+
+    </div>
+
+
+    <div id="book" class="book3">
+        <a href="#" id="introduction" class="intro3">Introduction</a>
+
+        <br>
+        <p class="intro3">
+            author:CC<br> publisher:C1
+            <br> price:180
+            <br>
+            <br>
+
+        </p>
+        <a href="#" id="inner_a" class="inner_fade">EXIT</a>
+
+    </div>
+
+
+    <div id="book" class="book4">
+        <a href="#" id="introduction" class="intro4">Introduction</a>
+
+        <br>
+        <p class="intro4">
+            author:DD<br> publisher:D1
+            <br> price:220
+            <br>
+            <br>
+
+        </p>
+        <a href="#" id="inner_a" class="inner_fadetoggle">EXIT</a>
+
+    </div>
+
+
+
+
+    <div id="book" class="order">
+
+        <form>
+            book1 <input type="number" class="number1"> book2 <input type="number" class="number1"> book3 <input type="number" class="number1"> book4 <input type="number" class="number1">
+
+        </form>
+        <a href="#" id="order" class="order">order info</a>
+
+
+        <div class="orderinfo">
+            <form action=send() name="form1">
+                Name <input type="text" size="8" name="name">
+                <br> Tele <input type="text" size="10" name="tele">
+                <br> mail <input type="text" size="10" name="mail">
+                <br>
+                <br>
+
+                <a href="#" class="send" onclick="send()">send</a> <a href="#" class="reset">reset</a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div id="book" class="receipt">
+        <h3>Thanks for Purchasing<h3>
+
+    <p id="para"></p>
+
+</div>
+
+</body>
+
+</html>

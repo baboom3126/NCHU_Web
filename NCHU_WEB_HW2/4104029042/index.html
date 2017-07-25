@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>互動式履歷表</title>
+
+<script>
+function send(){
+
+var f=document.form1;
+var name1=f.username.value;
+var date=f.birthday.value;
+var gender=f.sex.value;
+var ho=f.hobby;
+var hoNum=0;
+var ho1="",ho2="",ho3="";
+var text=f.intro.value;
+for(var i=0;i<ho.length;i++){
+	if(ho[i].checked)
+	{
+		hoNum++;
+	}
+}
+
+if(ho[0].checked)
+ho1=ho[0].value;
+
+if(ho[1].checked)
+ho2=ho[1].value;
+
+if(ho[2].checked)
+ho3=ho[2].value;
+
+
+
+alert("您輸入的資料為\n名字: "+name1+"\n生日: "+date+"\n性別: "+gender+"\n選了"+hoNum+"個興趣\n分別是: "+ho1+" "+ho2+" "+ho3+"\n自傳:\n"+text);
+
+document.getElementById("td1").innerHTML="名字:"+name1;
+document.getElementById("td2").innerHTML="生日:"+date;
+document.getElementById("td3").innerHTML="性別:"+gender;
+document.getElementById("td4").innerHTML="興趣:"+ho1;
+document.getElementById("td5").innerHTML=ho2;
+document.getElementById("td6").innerHTML=ho3;
+document.getElementById("td7").innerHTML="自傳:"+text;
+
+
+
+
+
+}
+
+
+
+</script>
+</head>
+<body>
+
+<form action="javascript:send()" name="form1">
+姓名:<input type="text" name="username" >
+<br>
+生日:<input type="date" name="birthday" >
+<br>
+性別:<input type="radio" name="sex" value="男">男
+     <input type="radio" name="sex" value="女">女
+	 <br>
+興趣:<input type="checkbox" name="hobby" value="吃飯">吃飯
+     <input type="checkbox" name="hobby" value="睡覺">睡覺
+	 <input type="checkbox" name="hobby" value="打東東">打東東
+<br>
+自傳:
+	 <textarea  name="intro" cols="50" rows="6" placeholder="請輸入內容"></textarea>
+
+<br	>
+	<input type="submit" value="確認">
+	<input type="reset" value="重設">
+	 
+	 
+</form>
+	 
+	 
+	<table border="1" width="600" id="table1">
+　		<tr id="tr1">
+　			<td colspan="3" id="td1" ></td>
+
+	　	</tr>
+		<tr>
+　			<td colspan="3" id="td2"></td>
+
+	　	</tr>
+		<tr>
+　			<td colspan="3" id="td3"></td>
+
+	　	</tr>
+　		<tr>
+　			<td id="td4"></td>
+			<td id="td5"></td>
+			<td id="td6"></td>
+　		</tr>
+		<tr>
+　			<td colspan="3" id="td7"></td>
+
+		</tr>
+	</table>
+</body>
+</html>
