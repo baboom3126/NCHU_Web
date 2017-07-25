@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+  <style>
+    #result{
+      padding: 10px;
+      margin: 10px;
+      background-color: #f47171;
+      color: #FFF;
+      width: 50%;
+      height: 25%;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    $.ajax({
+      url: 'http://localhost:8080/JSP-JSON-AJAX/api.jsp',
+      type:"GET",
+      dataType:'json',
+      success: function(result){
+          console.log(result);
+          for(var i = 0 ; i < result.length ; i++)
+          {
+              $('body').append(
+                "<div id='result'>" +
+                  "姓名：" + result[i].name + "<br/>" +
+                  "編號：" + result[i].RegNo + "<br/>" +
+                  "標記：" + result[i].Mark + "<br/>" +
+                  "信箱：" + result[i].mail + "<br/>" +
+                  "建立：" + result[i].CreateAt + "<br/>" +
+                "</div>"
+              );
+          }
+      },
+      error:function(xhr, ajaxOptions, thrownError){
+          console.log(xhr.status);
+      }
+    });
+  </script>
+</body>
+</html>
